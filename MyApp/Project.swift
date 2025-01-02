@@ -1,5 +1,6 @@
 import Foundation
 import ProjectDescription
+import ProjectDescriptionHelpers
 
 let project = Project(
     name: "MyApp",
@@ -20,6 +21,7 @@ let project = Project(
                 .project(target: "MyModule", path: .relativeToRoot("MyModule"))
             ]
         )
+        .addAstPaths()
     ],
     resourceSynthesizers: []
 )
