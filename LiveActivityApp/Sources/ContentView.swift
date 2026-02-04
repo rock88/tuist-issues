@@ -12,13 +12,7 @@ struct ContentView: View {
             Text("Localization: \(L10n.test)")
 
             Button("Request LiveActivity", action: viewModel.requestLiveActivity)
-
-            VStack(alignment: .leading) {
-                Text("Update:")
-                Button("Localized") { viewModel.updateLiveActivity(state: .initial(title: "test")) }
-                Button("End", action: viewModel.end)
-            }
-            .padding()
+            Button("End", action: viewModel.end)
         }
     }
 }
@@ -41,17 +35,9 @@ final class ViewModel: ObservableObject {
 
     func requestLiveActivity() {
         perform {
-            let activity = try await self.client.request(.initial(title: "Hi!"))
+            let activity = try await self.client.request(.initial())
             print(activity)
             self.activity = activity
-        }
-    }
-
-    func updateLiveActivity(state: LiveActivityState) {
-        guard let activity else { return }
-
-        perform {
-            try await self.client.update(activity, state)
         }
     }
 

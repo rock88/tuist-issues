@@ -2,7 +2,7 @@ import Foundation
 
 public enum L10n {
     /// Test (EN)
-    public static let test = L10n.tr("Localizable", "test")
+    public static let test = L10n.tr("Localizable", "test_key")
 }
 
 private extension L10n {

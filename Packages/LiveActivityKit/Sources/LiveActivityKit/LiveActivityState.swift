@@ -2,10 +2,8 @@ import ActivityKit
 import AppIntents
 
 public struct LiveActivityState: Codable, Hashable {
-    public let title: String
-
-    public static func initial(title: String) -> Self {
-        Self(title: title)
+    public static func initial() -> Self {
+        Self()
     }
 }
 

@@ -6,7 +6,7 @@ let package = Package(
     name: "Packages",
     platforms: [.iOS(.v15)],
     dependencies: [
-        .package(path: "Packages/Localization"),
-        .package(path: "Packages/LiveActivityKit")
+        .package(path: "../Packages/Localization"),
+        .package(path: "../Packages/LiveActivityKit")
     ]
 )

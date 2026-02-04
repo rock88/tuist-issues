@@ -40,10 +40,6 @@ struct TestView: View {
     let state: LiveActivityState
 
     var body: some View {
-        if state.title == "test" {
-            Text(L10n.test)
-        } else {
-            Text(state.title)
-        }
+        Text(L10n.test)
     }
 }
